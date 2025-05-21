@@ -66,3 +66,16 @@ If you want to run the project locally on your computer, follow these steps:
 
 ## Project Structure
 
+Here’s an overview of the project structure:
+
+/feb-2025-final-project-and-deployment-kgolomoleba
+├── index.html # Homepage
+├── about.html # About page
+├── contact.html # Contact page
+├── /css # Folder containing stylesheets
+│ └── style.css # Main stylesheet for the site
+├── /images # Folder for images and screenshots
+│ └── screenshot1.png # Sample image
+├── /js # Folder containing JavaScript files
+│ └── script.js # JavaScript file for interactive features
+└── README.md # Project documentation
