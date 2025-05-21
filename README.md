@@ -66,5 +66,3 @@ If you want to run the project locally on your computer, follow these steps:
 
 ## Project Structure
 
-Here’s an overview of the project structure:
-
