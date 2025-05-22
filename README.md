@@ -42,8 +42,6 @@ Here are some screenshots from the website:
 ![TechieTrends Screenshot 1](./images/screenshot1.png)
 ![TechieTrends Screenshot 2](./images/screenshot2.png)
 
-*Note: You can replace these placeholder image links with actual screenshots if needed.*
-
 ---
 
 ## How to Run the Project Locally
@@ -65,8 +63,6 @@ If you want to run the project locally on your computer, follow these steps:
 ---
 
 ## Project Structure
-
-Here’s an overview of the project structure:
 
 /feb-2025-final-project-and-deployment-kgolomoleba
 ├── index.html # Homepage
