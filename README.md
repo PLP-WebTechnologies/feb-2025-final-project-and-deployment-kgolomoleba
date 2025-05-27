@@ -1,4 +1,3 @@
-````markdown name=README.md
 # TechieTrends
 
 **Author:** Kgololosego Moleba
@@ -99,4 +98,3 @@ Visit the latest version here:
 MIT License
 
 ---
-````
