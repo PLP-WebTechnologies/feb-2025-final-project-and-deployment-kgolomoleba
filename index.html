@@ -2,83 +2,451 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TechieTrends - Explore the latest tech articles, trends, and innovations in AI, Blockchain, VR, and more." />
-  <meta name="keywords" content="AI, blockchain, virtual reality, smartphones, tech trends">
-  <meta name="author" content="Kgololosego Moleba">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TechieTrends - Home</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900;700;400&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0a192f;
+      --secondary: #112240;
+      --background: #0a192f;
+      --accent: #64ffda;
+      --highlight: #3ec9d6;
+      --surface: #112240;
+      --text: #dbeafe;
+      --headline: #64ffda;
+      --gradient: linear-gradient(120deg, #0a192f 0%, #112240 60%, #233554 100%);
+      --card-gradient: linear-gradient(120deg, #112240 0%, #233554 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      letter-spacing: 0.01em;
+    }
+    header {
+      background: var(--gradient);
+      color: var(--text);
+      padding: 2rem 1rem 1rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px 0 #0008;
+      border-bottom: 2px solid var(--accent);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-emoji {
+      font-size: 2.2rem;
+      background: var(--accent);
+      color: var(--primary);
+      border-radius: 50%;
+      padding: .12em .33em;
+      margin-right: 0.2em;
+      font-weight: bold;
+      box-shadow: 0 2px 10px #0002;
+    }
+    header h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      font-weight: 900;
+      background: -webkit-linear-gradient(120deg, var(--accent), #fff, var(--highlight));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.33rem 1.15rem;
+      border-radius: 22px;
+      background: transparent;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px #0000;
+    }
+    nav a.active, nav a:hover {
+      background: var(--accent);
+      color: var(--primary);
+      box-shadow: 0 2px 8px var(--accent);
+      text-shadow: 0 1px 8px #fff2;
+    }
+    main {
+      max-width: 920px;
+      margin: 2.5rem auto;
+      padding: 0 1.3rem;
+    }
+    .hero {
+      background: linear-gradient(135deg, #112240 0%, #233554 100%);
+      color: var(--headline);
+      border-radius: 32px;
+      padding: 3rem 2rem 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 22px #0006;
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .hero-icon {
+      font-size: 5.2rem;
+      margin-right: 2rem;
+      filter: drop-shadow(0 2px 10px #64ffda55);
+      animation: bounce 2s infinite alternate;
+    }
+    @keyframes bounce {
+      to { transform: translateY(-12px);}
+    }
+    .hero-content {
+      max-width: 520px;
+    }
+    .hero-content h2 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--headline);
+      text-shadow: 0 3px 12px #64ffda60;
+      letter-spacing: 1px;
+    }
+    .hero-content p {
+      font-size: 1.14rem;
+      margin-bottom: 1.4rem;
+      color: var(--text);
+      font-weight: 500;
+      text-shadow: 0 2px 12px #0002;
+      letter-spacing: 0.02em;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.85rem 2.15rem;
+      border-radius: 32px;
+      font-size: 1.18rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 2px 10px var(--accent);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      cursor: pointer;
+      margin-top: 0.7rem;
+    }
+    .cta-btn:hover, .cta-btn:focus {
+      background: var(--highlight);
+      color: var(--secondary);
+      transform: scale(1.07);
+      outline: none;
+      box-shadow: 0 6px 24px var(--highlight);
+    }
+    section {
+      margin-bottom: 2.5rem;
+      background: var(--surface);
+      border-radius: 24px;
+      padding: 2.1rem 1.5rem;
+      box-shadow: 0 4px 18px 0 #0008;
+      transition: background 0.3s, color 0.3s;
+    }
+    section h2 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.95rem;
+      margin-bottom: 1.2rem;
+      color: var(--headline);
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 12px #64ffda70;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    .articles-list {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .article-card {
+      background: var(--card-gradient);
+      color: var(--accent);
+      border-radius: 16px;
+      padding: 1.3rem 1rem 1.5rem 1rem;
+      min-width: 230px;
+      max-width: 330px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 12px var(--highlight);
+      font-size: 1rem;
+      transition: transform 0.17s, box-shadow 0.17s;
+      position: relative;
+      border: 2px solid var(--accent);
+    }
+    .article-card h3 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.23rem;
+      margin-bottom: 0.5em;
+      color: var(--highlight);
+      font-weight: 900;
+      text-shadow: 0 2px 8px #64ffda40;
+    }
+    .article-card p {
+      color: var(--text);
+      font-weight: 400;
+      text-shadow: 0 1px 4px #0002;
+    }
+    .article-card:hover { transform: translateY(-9px) scale(1.04); box-shadow: 0 8px 24px var(--accent);}
+    #latest-trends ul { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 1.3rem;}
+    #latest-trends li {
+      background: var(--highlight);
+      color: var(--primary);
+      border-radius: 8px;
+      padding: 0.5rem 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      box-shadow: 0 1px 4px #23355460;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+    .testimonials-section { margin-top:2.5rem; background: #233554; border: 2px solid var(--highlight);}
+    .testimonial-list { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center;}
+    .testimonial { flex:1 0 250px; min-width:200px; background:#1b263b; border-radius:12px; box-shadow:0 2px 12px #0002; padding:1rem 1.2rem; margin:1rem 0; position:relative;}
+    .testimonial .quote { font-size:1.4rem; color:var(--accent); position:absolute; left:10px; top:5px;}
+    .testimonial .author { font-weight:bold; margin-top:1rem; color:var(--highlight);}
+    .faq-section h2 { margin-bottom:0.5rem;}
+    .faq-list { margin-top:1rem;}
+    .faq-item { background:#102030; margin:0.5rem 0; border-radius:8px; box-shadow:0 1px 6px #64ffda30;}
+    .faq-q { cursor:pointer; padding:1rem; font-weight:bold; color:var(--highlight);}
+    .faq-a { display:none; padding:0 1rem 1rem 1rem; color:var(--text);}
+    .faq-item.open .faq-a { display:block;}
+    .faq-item.open .faq-q { color:var(--accent);}
+    #funFact { margin:1rem 0 0.5rem 0; color:var(--accent); font-style:italic; font-size:1.1rem;}
+    #newsletter form { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1rem;}
+    #newsletter label { font-weight: 500;}
+    #newsletter input[type="email"] { padding: 0.6rem 1.1rem; border-radius: 5px; border: 1.5px solid var(--accent); font-size: 1.05rem; margin-right: 0.5rem; outline: none; background: var(--surface); color: var(--text);}
+    #newsletter input[type="email"]:focus { border: 2px solid var(--highlight);}
+    #newsletter button[type="submit"] { background: var(--accent); color: var(--primary); border: none; border-radius: 4px; padding: 0.6rem 1.6rem; font-size: 1.07rem; cursor: pointer; font-weight: bold;}
+    #newsletter button[type="submit"]:hover { background: var(--highlight); color: var(--secondary);}
+    #newsletterMsg { margin-left: 1rem; font-size: 1rem; min-width: 120px;}
+    #newsletterMsg.success { color: #4bb543;}
+    #newsletterMsg.error { color: #E94560;}
+    #backToTop { position: fixed; bottom: 2rem; right: 2rem; background: var(--highlight); color: var(--secondary); border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 2rem; cursor: pointer; box-shadow: 0 2px 10px #64ffda50; opacity: 0; pointer-events: none; transition: opacity 0.3s, background 0.2s, color 0.2s; z-index: 50;}
+    #backToTop.show { opacity: 1; pointer-events: auto;}
+    #backToTop:hover { background: var(--accent); color: var(--primary);}
+    .footer-icons { display: inline-flex; gap: 1.1rem; margin-left: 1.2rem; font-size: 1.35rem; vertical-align: middle;}
+    footer { background: var(--surface); color: var(--accent); padding: 2rem 1.5rem 1rem 1.5rem; text-align: center; margin-top: 3rem; border-radius: 24px 24px 0 0; box-shadow: 0 4px 16px 0 #0005; font-size: 1rem; font-weight: bold;}
+    footer a { color: var(--accent); text-decoration: none; margin: 0 0.5rem;}
+    footer a:hover { text-decoration: underline; color: var(--highlight);}
+    @media (max-width: 1000px) { main { max-width: 99vw;} }
+    @media (max-width: 800px) { .hero { flex-direction: column; gap: 1.2rem;} section { padding: 1rem 0.6rem;} .articles-list { flex-direction: column;} }
+    @media (max-width:600px) { header h1 {font-size:1.1rem;} nav a { font-size:1rem; padding: 0.25rem 0.7rem;} }
+  </style>
 </head>
 <body>
   <header>
-    <h1>TechieTrends</h1>
+    <div class="logo-area">
+      <span class="logo-emoji" aria-label="Rocket">🚀</span>
+      <h1>TechieTrends</h1>
+    </div>
     <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="themeToggle" aria-label="Toggle Dark Mode">🌓</button></li>
-      </ul>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Articles</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
-
   <main>
-    <section class="featured-articles">
-      <h2>Featured Articles</h2>
-
-      <!-- Article 1 -->
-      <div class="article">
-        <h3>🚀 The Future of AI in 2025</h3>
-        <p class="preview">AI is making strides every year. In 2025, we're seeing it reshape healthcare, education, and even creative fields...</p>
-        <button class="read-more">Read More</button>
-        <p class="extra-content hidden">Read all about the advancements, challenges, and breakthroughs expected in AI this year...</p>
-      </div>
-
-      <!-- Article 2 -->
-      <div class="article">
-        <h3>📱 Smartphones of the Future</h3>
-        <p class="preview">Foldable, 5G, and beyond—discover what your next phone will look like and how smartphones will evolve in the next few years...</p>
-        <button class="read-more">Read More</button>
-        <p class="extra-content hidden">Exploring new features like flexible screens, AI-powered cameras, and more...</p>
-      </div>
-
-      <!-- Article 3 -->
-      <div class="article">
-        <h3>🔗 Blockchain: Beyond Crypto</h3>
-        <p class="preview">Blockchain is not just for cryptocurrencies anymore. Learn about how it’s disrupting finance, supply chains, and even voting...</p>
-        <button class="read-more">Read More</button>
-        <p class="extra-content hidden">Blockchain's applications go far beyond digital currencies. Here's how it's transforming industries...</p>
-      </div>
-
-      <!-- Article 4 -->
-      <div class="article">
-        <h3>🕶️ Virtual Reality: The New Frontier</h3>
-        <p class="preview">VR isn't just for gaming anymore. Explore how VR is changing education, healthcare, and even social interaction...</p>
-        <button class="read-more">Read More</button>
-        <p class="extra-content hidden">VR is expanding into fields you might not expect. The possibilities are endless, and the future is bright...</p>
+    <section class="hero">
+      <span class="hero-icon" role="img" aria-label="Robot">🤖</span>
+      <div class="hero-content">
+        <h2>Welcome to <span style="color:var(--accent)">TechieTrends</span>!</h2>
+        <p>
+          <strong>Fresh tech news, breakthroughs, and inspiration.</strong><br>
+          Explore the newest in AI, hardware, software, green tech, and more.<br>
+          <span style="color:var(--highlight);font-weight:bold;">Your daily pulse on the digital world.</span>
+        </p>
+        <div id="techQuote" style="margin-top:1.2rem; font-style:italic; font-size:1.08rem; color:var(--highlight);"></div>
+        <a href="#featured-articles" class="cta-btn">See What's Hot</a>
       </div>
     </section>
-
-    <section class="latest-trends">
-      <h2>Latest Tech Trends</h2>
+    <section id="featured-articles">
+      <h2>🚀 Trending Now</h2>
+      <div class="articles-list">
+        <article class="article-card">
+          <h3>🌐 Meta Debuts Real-Time Holographic Video Calls</h3>
+          <p>Meta's new Horizon Project brings live 3D holographic calls to consumer AR glasses, blending physical and digital conversations like never before.</p>
+        </article>
+        <article class="article-card">
+          <h3>💡 Solar Panels Get 35% Efficiency Breakthrough</h3>
+          <p>Researchers at MIT unveil a new solar cell material, promising massive boosts in renewable energy output and affordability.</p>
+        </article>
+        <article class="article-card">
+          <h3>📺 Netflix Launches Interactive AI-Personalized Shows</h3>
+          <p>Netflix now lets viewers co-write and shape storylines using AI, ushering in a new era of interactive streaming content.</p>
+        </article>
+        <article class="article-card">
+          <h3>🧬 CRISPR Gene Therapy Cures Rare Blood Disease</h3>
+          <p>Doctors report the first complete cure of beta thalassemia using next-gen CRISPR gene editing, paving the way for more genetic treatments.</p>
+        </article>
+        <article class="article-card">
+          <h3>🛰️ SpaceX's Starlink Direct-to-Phone Goes Global</h3>
+          <p>Starlink users can now access satellite internet directly on standard smartphones, connecting millions in rural and remote areas worldwide.</p>
+        </article>
+      </div>
+    </section>
+    <section id="latest-trends">
+      <h2>🔥 Latest Tech Trends</h2>
       <ul>
-        <li><a href="#">AI Advancements in 2025: What's Next?</a></li>
-        <li><a href="#">The Rise of Edge Computing: What You Need to Know</a></li>
-        <li><a href="#">5G and the Evolution of Internet Speed</a></li>
-        <li><a href="#">How NFTs Are Changing the Digital Art World</a></li>
-        <li><a href="#">Quantum Computing: Why It's a Game-Changer</a></li>
+        <li>AI Co-Pilots for Code and Design</li>
+        <li>Holographic Communication</li>
+        <li>Supercharged Solar Power</li>
+        <li>Interactive Streaming Content</li>
+        <li>Space Internet for All</li>
       </ul>
     </section>
+    <section class="testimonials-section">
+      <h2>💬 User Testimonials</h2>
+      <div class="testimonial-list">
+        <div class="testimonial"><span class="quote">“</span>Thanks to TechieTrends, I discovered Starlink's direct-to-phone—game changer for my remote work!<div class="author">– Lwazi M.</div></div>
+        <div class="testimonial"><span class="quote">“</span>The new AI co-pilot features for design I read about here helped me automate my creative workflow.<div class="author">– Sharon T.</div></div>
+        <div class="testimonial"><span class="quote">“</span>Love that you always highlight both the tech and the impact on real people.<div class="author">– Elias P.</div></div>
+      </div>
+    </section>
+    <section class="faq-section">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How do you choose which tech stories to feature?</div>
+          <div class="faq-a">Our team tracks global news, startup launches, academic papers, and community submissions. We prioritize breakthroughs with real-world impact.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I get your updates on WhatsApp or Telegram?</div>
+          <div class="faq-a">Coming soon! We're testing messaging news briefings for both platforms—stay tuned!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Where can I suggest a topic?</div>
+          <div class="faq-a">You can suggest topics via our Contact page or tweet @TechieTrends!</div>
+        </div>
+      </div>
+    </section>
+    <section id="newsletter">
+      <h2>Subscribe to our Newsletter</h2>
+      <div id="funFact"></div>
+      <form id="newsletterForm" autocomplete="off">
+        <label for="newsletterEmail">Email address:</label>
+        <input type="email" name="newsletterEmail" id="newsletterEmail" placeholder="you@example.com" required />
+        <button type="submit">Subscribe</button>
+        <span id="newsletterMsg" role="alert"></span>
+      </form>
+      <p style="margin-top:1rem;font-size:0.95rem;color:var(--highlight);">
+        Get tomorrow’s tech news, trends & tips today!
+      </p>
+    </section>
+    <button id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
   </main>
-
   <footer>
-    <p>&copy; 2025 Kgololosego Moleba - TechieTrends</p>
-    <ul>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <div>
+      <span>&copy; 2025 TechieTrends. All rights reserved.</span>
+      <span class="footer-icons">
+        <span title="Twitter" aria-label="Twitter">🐦</span>
+        <span title="Facebook" aria-label="Facebook">📘</span>
+        <span title="GitHub" aria-label="GitHub">💻</span>
+      </span>
+    </div>
+    <div>
+      <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a>
+    </div>
   </footer>
-
-  <script src="js/script.js"></script>
+  <script>
+    // Newsletter JS
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterMsg = document.getElementById('newsletterMsg');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const email = newsletterEmail.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          newsletterMsg.textContent = "Please enter a valid email address.";
+          newsletterMsg.className = "error";
+          return;
+        }
+        newsletterMsg.textContent = "Subscribed! Thank you 🎉";
+        newsletterMsg.className = "success";
+        newsletterEmail.value = "";
+        setTimeout(() => {
+          newsletterMsg.textContent = "";
+          newsletterMsg.className = "";
+        }, 4000);
+      });
+    }
+    // Back to Top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    backToTop && backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    // Tech Quote Rotator
+    const quotes = [
+      "“The best way to predict the future is to invent it.” – Alan Kay",
+      "“AI will be the new electricity.” – Andrew Ng",
+      "“The next big thing is the one that makes the last big thing usable.” – Blake Ross",
+      "“Technology is a word that describes something that doesn't work yet.” – Douglas Adams"
+    ];
+    let quoteIndex = 0;
+    function showQuote() {
+      document.getElementById('techQuote').textContent = quotes[quoteIndex];
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+    }
+    showQuote();
+    setInterval(showQuote, 6000);
+    // FAQ Section (expand/collapse)
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', function() {
+        const parent = this.parentElement;
+        parent.classList.toggle('open');
+      });
+    });
+    // Fun Fact Rotator
+    const facts = [
+      "Did you know? Solar panels today are over 5x more efficient than in 2000.",
+      "Holographic video calls are projected to reach 100M users by 2028.",
+      "Gene editing tech like CRISPR is being trialed in over 40 new therapies.",
+      "Starlink now provides internet to research bases in Antarctica.",
+      "AI-written scripts are powering several Netflix interactive shows."
+    ];
+    let factIndex = 0;
+    function showFact() {
+      document.getElementById('funFact').textContent = "💡 " + facts[factIndex];
+      factIndex = (factIndex + 1) % facts.length;
+    }
+    showFact();
+    setInterval(showFact, 7000);
+  </script>
 </body>
 </html>

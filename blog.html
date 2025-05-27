@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Articles - TechieTrends</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900;700;400&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0a192f;
+      --secondary: #112240;
+      --background: #0a192f;
+      --accent: #64ffda;
+      --highlight: #3ec9d6;
+      --surface: #112240;
+      --text: #dbeafe;
+      --headline: #64ffda;
+      --gradient: linear-gradient(120deg, #0a192f 0%, #112240 60%, #233554 100%);
+      --card-gradient: linear-gradient(120deg, #112240 0%, #233554 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      letter-spacing: 0.01em;
+    }
+    header {
+      background: var(--gradient);
+      color: var(--text);
+      padding: 2rem 1rem 1rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px 0 #0008;
+      border-bottom: 2px solid var(--accent);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-emoji {
+      font-size: 2.2rem;
+      background: var(--accent);
+      color: var(--primary);
+      border-radius: 50%;
+      padding: .12em .33em;
+      margin-right: 0.2em;
+      font-weight: bold;
+      box-shadow: 0 2px 10px #0002;
+    }
+    header h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      font-weight: 900;
+      background: -webkit-linear-gradient(120deg, var(--accent), #fff, var(--highlight));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.33rem 1.15rem;
+      border-radius: 22px;
+      background: transparent;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px #0000;
+    }
+    nav a.active, nav a:hover {
+      background: var(--accent);
+      color: var(--primary);
+      box-shadow: 0 2px 8px var(--accent);
+      text-shadow: 0 1px 8px #fff2;
+    }
+    main {
+      max-width: 960px;
+      margin: 2.5rem auto;
+      padding: 0 1.3rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+      background: var(--surface);
+      border-radius: 24px;
+      padding: 2.1rem 1.5rem;
+      box-shadow: 0 4px 18px 0 #0008;
+      transition: background 0.3s, color 0.3s;
+    }
+    section h2 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.15rem;
+      margin-bottom: 1.2rem;
+      color: var(--headline);
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 12px #64ffda70;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    .blog-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0 1rem 0;
+    }
+    .blog-card {
+      background: var(--card-gradient);
+      border-radius: 16px;
+      color: var(--highlight);
+      padding: 1.2rem 1.1rem 1.2rem 1.2rem;
+      min-width: 260px;
+      max-width: 380px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 12px var(--highlight);
+      font-size: 1rem;
+      border: 2px solid var(--accent);
+      transition: transform 0.17s, box-shadow 0.17s;
+      position: relative;
+    }
+    .blog-card h3 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.19rem;
+      margin: 0 0 0.55em 0;
+      color: var(--accent);
+      font-weight: 900;
+      text-shadow: 0 2px 8px #64ffda40;
+    }
+    .blog-card .meta {
+      font-size: 0.9rem;
+      color: var(--highlight);
+      margin-bottom: 0.6em;
+      opacity: 0.8;
+      font-style: italic;
+    }
+    .blog-card p {
+      color: var(--text);
+      font-weight: 400;
+      margin: 0.2em 0 0.7em 0;
+    }
+    .blog-card a {
+      color: var(--headline);
+      text-decoration: underline;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .blog-card a:hover { color: var(--accent);}
+    .blog-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 8px 24px var(--accent);}
+    .no-articles { color: var(--highlight); margin: 2rem; text-align: center; font-size: 1.2rem;}
+    .footer-icons { display: inline-flex; gap: 1.1rem; margin-left: 1.2rem; font-size: 1.35rem; vertical-align: middle;}
+    footer { background: var(--surface); color: var(--accent); padding: 2rem 1.5rem 1rem 1.5rem; text-align: center; margin-top: 3rem; border-radius: 24px 24px 0 0; box-shadow: 0 4px 16px 0 #0005; font-size: 1rem; font-weight: bold;}
+    footer a { color: var(--accent); text-decoration: none; margin: 0 0.5rem;}
+    footer a:hover { text-decoration: underline; color: var(--highlight);}
+    @media (max-width: 1000px) { main { max-width: 99vw;} .blog-list { gap: 1rem; } }
+    @media (max-width: 800px) { section { padding: 1rem 0.6rem;} .blog-list { flex-direction: column; align-items:center;} }
+    @media (max-width:600px) { header h1 {font-size:1.1rem;} nav a { font-size:1rem; padding: 0.25rem 0.7rem;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <span class="logo-emoji" aria-label="Rocket">🚀</span>
+      <h1>TechieTrends</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="active">Articles</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>📰 All Articles</h2>
+      <div class="blog-list">
+        <div class="blog-card">
+          <h3>🧠 Google Launches Gemini Ultra: The Next-Gen AI Assistant</h3>
+          <div class="meta">May 27, 2025 &middot; By Rina Patel</div>
+          <p>Gemini Ultra can understand voice, images, and video at once, powering the new Google Home and Android. Early users say it’s as conversational as a human.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>🛰️ Amazon’s Project Kuiper Internet Satellites Begin Service</h3>
+          <div class="meta">May 26, 2025 &middot; By Sam Lee</div>
+          <p>Amazon’s Kuiper satellites are now providing high-speed internet to rural schools in Brazil and India, marking a milestone in global connectivity.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>🦾 Boston Dynamics Atlas Robot Works Construction Site</h3>
+          <div class="meta">May 25, 2025 &middot; By Alex Rivera</div>
+          <p>Atlas, the humanoid robot, completes its first tasks on a construction site—lifting, sorting, and assisting workers, all with safety approval.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>🌡️ Climate Tech: Carbon Capture Plant Goes Live in Kenya</h3>
+          <div class="meta">May 24, 2025 &middot; By Kgololosego Moleba</div>
+          <p>Kenya launches Africa’s largest carbon capture facility, aiming to reduce CO₂ emissions from power and industry by 2.5 million tons a year.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>🌊 Underwater Drones Map the Deepest Ocean Trench</h3>
+          <div class="meta">May 22, 2025 &middot; By Sam Lee</div>
+          <p>A fleet of autonomous drones has mapped the Mariana Trench in high-res 3D, discovering dozens of new marine species and geological features.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>💻 Microsoft Teams Up With Open Source for Secure AI</h3>
+          <div class="meta">May 21, 2025 &middot; By Alex Rivera</div>
+          <p>Microsoft partners with open source communities to release a transparent, auditable AI model repository as part of a push for trustworthy AI.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>🔋 Battery Tech: EVs Now Charge in 7 Minutes</h3>
+          <div class="meta">May 20, 2025 &middot; By Rina Patel</div>
+          <p>Breakthrough lithium-glass batteries mean electric cars can now recharge in minutes, not hours—rolling out on new models this summer.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>👓 Apple Vision Pro 2 Review: AR For Everyday</h3>
+          <div class="meta">May 19, 2025 &middot; By Kgololosego Moleba</div>
+          <p>The second generation of Apple’s AR headset impresses with lighter weight, sharper displays, and a growing ecosystem of useful apps.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>🎮 PlayStation 6 Announced with Cloud-Only Game Mode</h3>
+          <div class="meta">May 18, 2025 &middot; By Rina Patel</div>
+          <p>Sony unveils the PlayStation 6, featuring advanced cloud gaming and a new controller with haptic feedback for emotions.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+          <h3>🌱 Urban Farms: IoT-Powered Skyscraper Greens</h3>
+          <div class="meta">May 17, 2025 &middot; By Alex Rivera</div>
+          <p>IoT-controlled urban farms in skyscrapers are producing fresh food with 80% less water, changing city diets from New York to Tokyo.</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <span>&copy; 2025 TechieTrends. All rights reserved.</span>
+      <span class="footer-icons">
+        <span title="Twitter" aria-label="Twitter">🐦</span>
+        <span title="Facebook" aria-label="Facebook">📘</span>
+        <span title="GitHub" aria-label="GitHub">💻</span>
+      </span>
+    </div>
+    <div>
+      <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a>
+    </div>
+  </footer>
+</body>
+</html>
