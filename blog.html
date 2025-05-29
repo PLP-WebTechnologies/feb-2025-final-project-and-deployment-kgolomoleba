@@ -3,179 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Articles - TechieTrends</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900;700;400&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>Articles | TechTical</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0a192f;
-      --secondary: #112240;
-      --background: #0a192f;
-      --accent: #64ffda;
-      --highlight: #3ec9d6;
-      --surface: #112240;
-      --text: #dbeafe;
-      --headline: #64ffda;
-      --gradient: linear-gradient(120deg, #0a192f 0%, #112240 60%, #233554 100%);
-      --card-gradient: linear-gradient(120deg, #112240 0%, #233554 100%);
+      --primary: #0c1220;
+      --background: #181a27;
+      --surface: rgba(25, 28, 46, 0.82);
+      --glass: rgba(32, 38, 66, 0.56);
+      --accent: #40e0ff;
+      --accent2: #00ffc3;
+      --hglow: #94ebff;
+      --headline: #40e0ff;
+      --text: #f7fafc;
+      --card-gradient: linear-gradient(135deg, #1c2135 60%, #272b40 100%);
+      --section-glass: rgba(22, 28, 47, 0.97);
+      --gradient: linear-gradient(100deg, #40e0ff 0%, #00ffc3 100%);
+      --shadow: 0 8px 32px 0 rgba(9, 210, 255, 0.18);
+      --blur: blur(14px);
     }
-    html { scroll-behavior: smooth; }
     body {
       background: var(--background);
       color: var(--text);
-      font-family: 'Roboto', Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       margin: 0;
       min-height: 100vh;
       letter-spacing: 0.01em;
     }
     header {
-      background: var(--gradient);
-      color: var(--text);
-      padding: 2rem 1rem 1rem 1rem;
+      background: var(--glass);
+      backdrop-filter: var(--blur);
+      color: var(--headline);
+      padding: 2rem 1.5rem 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 20px 0 #0008;
-      border-bottom: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent2);
       position: sticky; top: 0; z-index: 1000;
+      box-shadow: var(--shadow);
     }
     .logo-area {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-    .logo-emoji {
-      font-size: 2.2rem;
-      background: var(--accent);
-      color: var(--primary);
-      border-radius: 50%;
-      padding: .12em .33em;
-      margin-right: 0.2em;
-      font-weight: bold;
-      box-shadow: 0 2px 10px #0002;
-    }
-    header h1 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 2.2rem;
-      letter-spacing: 2px;
+    .logo-graphic {
+      font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+      font-size: 2.7rem;
       font-weight: 900;
-      background: -webkit-linear-gradient(120deg, var(--accent), #fff, var(--highlight));
+      letter-spacing: 4px;
+      color: var(--headline);
+      background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      text-fill-color: transparent;
+      filter: drop-shadow(0 0 16px var(--accent2)) drop-shadow(0 0 22px #1cfff544);
+      text-shadow: 0 4px 32px var(--accent2);
+      transition: filter 0.3s;
+      line-height: 1;
+      margin-right: 8px;
+    }
+    .logo-graphic span {
+      font-size: 1.5rem;
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 600;
+      margin-left: 0.6rem;
+      color: var(--hglow);
+      background: none;
+      -webkit-text-fill-color: var(--hglow);
+      text-shadow: none;
+      filter: none;
+      letter-spacing: 2px;
     }
     nav {
       display: flex;
       align-items: center;
-      gap: 1.4rem;
+      gap: 1.7rem;
     }
     nav a {
-      color: var(--text);
+      color: var(--headline);
       text-decoration: none;
-      font-weight: 700;
-      padding: 0.33rem 1.15rem;
-      border-radius: 22px;
+      font-weight: 600;
+      padding: 0.36rem 1.2rem;
+      border-radius: 24px;
       background: transparent;
-      font-family: 'Montserrat', Arial, sans-serif;
       font-size: 1.1rem;
-      letter-spacing: 1px;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.5px;
+      transition: background 0.22s, color 0.22s, box-shadow 0.22s;
       box-shadow: 0 2px 8px #0000;
+      position: relative;
     }
     nav a.active, nav a:hover {
-      background: var(--accent);
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
       color: var(--primary);
-      box-shadow: 0 2px 8px var(--accent);
+      box-shadow: 0 2px 12px var(--accent2);
       text-shadow: 0 1px 8px #fff2;
     }
     main {
-      max-width: 960px;
-      margin: 2.5rem auto;
-      padding: 0 1.3rem;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.4rem 2rem 1.4rem;
+    }
+    .hero-articles {
+      position: relative;
+      margin: 2.5rem 0 2.1rem 0;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 220px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+    }
+    .articles-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+      filter: brightness(0.67) blur(1.5px) saturate(1.1);
+      z-index: 0;
+    }
+    .articles-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, #181a27ee 45%, #40e0ff33 100%);
+      z-index: 1;
+    }
+    .hero-articles-content {
+      position: relative;
+      z-index: 2;
+      padding: 2.6rem 2.5rem;
+      color: var(--headline);
+      max-width: 660px;
+    }
+    .hero-articles-content h2 {
+      font-size: 2.3rem;
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--headline);
+      text-shadow: 0 6px 32px #40e0ff6e;
+      letter-spacing: 2.5px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      filter: drop-shadow(0 0 10px #00ffc366);
+    }
+    .hero-articles-content p {
+      font-size: 1.17rem;
+      color: var(--text);
+      text-shadow: 0 1px 8px #0003;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
     }
     section {
       margin-bottom: 2.5rem;
-      background: var(--surface);
+      background: var(--section-glass);
       border-radius: 24px;
-      padding: 2.1rem 1.5rem;
-      box-shadow: 0 4px 18px 0 #0008;
+      padding: 2.3rem 1.5rem;
+      box-shadow: var(--shadow);
       transition: background 0.3s, color 0.3s;
+      backdrop-filter: blur(13px);
     }
     section h2 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 2.15rem;
-      margin-bottom: 1.2rem;
+      font-size: 2.1rem;
+      font-family: 'Orbitron', Arial, sans-serif;
+      margin-bottom: 1.4rem;
       color: var(--headline);
-      font-weight: bold;
-      letter-spacing: 1.5px;
+      font-weight: 900;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      text-shadow: 0 2px 12px #64ffda70;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.5rem;
+      text-shadow: 0 2px 18px var(--accent2);
+      border-bottom: 2px solid var(--accent2);
+      padding-bottom: 0.6rem;
     }
     .blog-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 2.3rem;
       justify-content: center;
-      margin: 2rem 0 1rem 0;
     }
     .blog-card {
       background: var(--card-gradient);
-      border-radius: 16px;
-      color: var(--highlight);
-      padding: 1.2rem 1.1rem 1.2rem 1.2rem;
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 1.3rem 1rem 1.7rem 1rem;
       min-width: 260px;
-      max-width: 380px;
+      max-width: 370px;
       margin-bottom: 1rem;
-      box-shadow: 0 2px 12px var(--highlight);
+      box-shadow: 0 8px 32px #00ffc344, 0 2px 10px #00ffc311;
       font-size: 1rem;
-      border: 2px solid var(--accent);
       transition: transform 0.17s, box-shadow 0.17s;
       position: relative;
+      border: 2px solid var(--accent2);
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
     }
+    .blog-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+      margin-bottom: 1rem;
+      filter: grayscale(10%) brightness(0.98);
+      box-shadow: 0 2px 10px #26e6ff22;
+      transition: filter 0.2s;
+    }
+    .blog-card:hover img { filter: brightness(1.07) saturate(1.13);}
     .blog-card h3 {
-      font-family: 'Montserrat', Arial, sans-serif;
       font-size: 1.19rem;
-      margin: 0 0 0.55em 0;
-      color: var(--accent);
+      margin-bottom: 0.5em;
+      color: var(--accent2);
+      font-family: 'Orbitron', Arial, sans-serif;
       font-weight: 900;
-      text-shadow: 0 2px 8px #64ffda40;
+      text-shadow: 0 2px 14px #00ffc344;
     }
-    .blog-card .meta {
-      font-size: 0.9rem;
-      color: var(--highlight);
-      margin-bottom: 0.6em;
-      opacity: 0.8;
-      font-style: italic;
+    .meta {
+      color: var(--hglow);
+      font-size: 0.97rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
     .blog-card p {
-      color: var(--text);
+      color: var(--highlight);
       font-weight: 400;
-      margin: 0.2em 0 0.7em 0;
+      text-shadow: 0 1px 4px #0002;
+      flex-grow: 1;
     }
     .blog-card a {
-      color: var(--headline);
-      text-decoration: underline;
+      display: inline-block;
+      margin-top: 0.9rem;
+      background: var(--gradient);
+      color: #0c1220;
+      padding: 0.45rem 1.1rem;
+      border-radius: 16px;
       font-weight: 700;
-      transition: color 0.2s;
+      text-decoration: none;
+      font-size: 1.06rem;
+      transition: background 0.18s, color 0.18s;
+      box-shadow: 0 2px 8px var(--accent2);
     }
-    .blog-card a:hover { color: var(--accent);}
-    .blog-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 8px 24px var(--accent);}
-    .no-articles { color: var(--highlight); margin: 2rem; text-align: center; font-size: 1.2rem;}
-    .footer-icons { display: inline-flex; gap: 1.1rem; margin-left: 1.2rem; font-size: 1.35rem; vertical-align: middle;}
-    footer { background: var(--surface); color: var(--accent); padding: 2rem 1.5rem 1rem 1.5rem; text-align: center; margin-top: 3rem; border-radius: 24px 24px 0 0; box-shadow: 0 4px 16px 0 #0005; font-size: 1rem; font-weight: bold;}
-    footer a { color: var(--accent); text-decoration: none; margin: 0 0.5rem;}
-    footer a:hover { text-decoration: underline; color: var(--highlight);}
-    @media (max-width: 1000px) { main { max-width: 99vw;} .blog-list { gap: 1rem; } }
-    @media (max-width: 800px) { section { padding: 1rem 0.6rem;} .blog-list { flex-direction: column; align-items:center;} }
-    @media (max-width:600px) { header h1 {font-size:1.1rem;} nav a { font-size:1rem; padding: 0.25rem 0.7rem;} }
+    .blog-card a:hover {background: var(--accent2); color: var(--primary);}
+    .blog-card:hover { transform: translateY(-7px) scale(1.03); box-shadow: 0 8px 24px var(--accent2);}
+    .blog-info {
+      margin-top: 2.2rem;
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 1.5rem 1.1rem;
+      font-size: 1.08rem;
+      color: var(--highlight);
+      box-shadow: 0 2px 10px #40e0ff18;
+    }
+    .blog-info h4 {
+      color: var(--accent2);
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.19rem;
+      margin-bottom: .6rem;
+    }
+    @media (max-width:1000px){
+      .blog-list {flex-direction:column; gap:1.1rem;}
+      .hero-articles-content{padding:1.2rem;}
+    }
+    @media (max-width:650px){
+      header h1{font-size:1.1rem;}
+      .logo-graphic{font-size:1.3rem;}
+      .hero-articles-content h2{font-size:1.3rem;}
+      .hero-articles-content{padding:1rem;}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo-area">
-      <span class="logo-emoji" aria-label="Rocket">🚀</span>
-      <h1>TechieTrends</h1>
+      <div class="logo-graphic">
+        TechTical <span>INSIGHTS</span>
+      </div>
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -186,79 +294,103 @@
     </nav>
   </header>
   <main>
+    <div class="hero-articles">
+      <div class="articles-bg"></div>
+      <div class="articles-gradient"></div>
+      <div class="hero-articles-content">
+        <h2>Featured Articles & In-Depth Reports</h2>
+        <p>
+          Explore our comprehensive articles, reviews, and features on the latest in technology, science, and innovation. 
+          From AI breakthroughs and green energy to digital privacy and future trends, TechTical delivers clear, actionable insights and trusted reporting.
+        </p>
+        <p>
+          <b>Stay ahead. Stay informed. Stay inspired.</b>
+        </p>
+      </div>
+    </div>
     <section>
-      <h2>📰 All Articles</h2>
+      <h2>Latest Articles</h2>
       <div class="blog-list">
         <div class="blog-card">
-          <h3>🧠 Google Launches Gemini Ultra: The Next-Gen AI Assistant</h3>
-          <div class="meta">May 27, 2025 &middot; By Rina Patel</div>
-          <p>Gemini Ultra can understand voice, images, and video at once, powering the new Google Home and Android. Early users say it’s as conversational as a human.</p>
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="AI Assistant">
+          <h3>Google Gemini Ultra: The Next-Gen AI Assistant</h3>
+          <div class="meta">May 29, 2025 · By Rina Patel</div>
+          <p>
+            Gemini Ultra can understand voice, images, and video simultaneously, powering the new Google Home and Android. A hands-on review of its conversational skills and privacy strengths.
+          </p>
           <a href="#">Read More</a>
         </div>
         <div class="blog-card">
-          <h3>🛰️ Amazon’s Project Kuiper Internet Satellites Begin Service</h3>
-          <div class="meta">May 26, 2025 &middot; By Sam Lee</div>
-          <p>Amazon’s Kuiper satellites are now providing high-speed internet to rural schools in Brazil and India, marking a milestone in global connectivity.</p>
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Holograms">
+          <h3>Meta's Holographic Calls: Connecting in 3D</h3>
+          <div class="meta">May 28, 2025 · By Alex Rivera</div>
+          <p>
+            We test Meta's new AR glasses with real-time holographic video calls. Does this new tech really deliver on the promise of immersive, lifelike presence?
+          </p>
           <a href="#">Read More</a>
         </div>
         <div class="blog-card">
-          <h3>🦾 Boston Dynamics Atlas Robot Works Construction Site</h3>
-          <div class="meta">May 25, 2025 &middot; By Alex Rivera</div>
-          <p>Atlas, the humanoid robot, completes its first tasks on a construction site—lifting, sorting, and assisting workers, all with safety approval.</p>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Solar Tech">
+          <h3>35% Efficient Solar Cells: Green Tech Milestone</h3>
+          <div class="meta">May 27, 2025 · By Kgololosego Moleba</div>
+          <p>
+            MIT’s new solar materials are set to change the energy game. We break down the science, the impact, and how close we are to affordable renewable power worldwide.
+          </p>
           <a href="#">Read More</a>
         </div>
         <div class="blog-card">
-          <h3>🌡️ Climate Tech: Carbon Capture Plant Goes Live in Kenya</h3>
-          <div class="meta">May 24, 2025 &middot; By Kgololosego Moleba</div>
-          <p>Kenya launches Africa’s largest carbon capture facility, aiming to reduce CO₂ emissions from power and industry by 2.5 million tons a year.</p>
+          <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80" alt="AI Streaming">
+          <h3>Netflix & AI: Interactive Streaming’s Future</h3>
+          <div class="meta">May 26, 2025 · By Rina Patel</div>
+          <p>
+            AI-powered storylines and viewer choices are here. Is this the future of entertainment, or just a novelty? Our analysis and hands-on impressions.
+          </p>
           <a href="#">Read More</a>
         </div>
         <div class="blog-card">
-          <h3>🌊 Underwater Drones Map the Deepest Ocean Trench</h3>
-          <div class="meta">May 22, 2025 &middot; By Sam Lee</div>
-          <p>A fleet of autonomous drones has mapped the Mariana Trench in high-res 3D, discovering dozens of new marine species and geological features.</p>
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80" alt="CRISPR Gene Editing">
+          <h3>Gene Editing Breakthroughs: Health Reimagined</h3>
+          <div class="meta">May 24, 2025 · By Alex Rivera</div>
+          <p>
+            CRISPR gene therapy just cured a rare blood disease. What does this mean for medicine, and what are the ethical challenges ahead?
+          </p>
           <a href="#">Read More</a>
         </div>
         <div class="blog-card">
-          <h3>💻 Microsoft Teams Up With Open Source for Secure AI</h3>
-          <div class="meta">May 21, 2025 &middot; By Alex Rivera</div>
-          <p>Microsoft partners with open source communities to release a transparent, auditable AI model repository as part of a push for trustworthy AI.</p>
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Starlink Direct to Phone">
+          <h3>Starlink: Global Connectivity for All</h3>
+          <div class="meta">May 23, 2025 · By Sam Lee</div>
+          <p>
+            With direct-to-phone satellite internet, SpaceX’s Starlink offers fast, reliable access almost anywhere. We test the tech and talk to users benefiting worldwide.
+          </p>
           <a href="#">Read More</a>
         </div>
-        <div class="blog-card">
-          <h3>🔋 Battery Tech: EVs Now Charge in 7 Minutes</h3>
-          <div class="meta">May 20, 2025 &middot; By Rina Patel</div>
-          <p>Breakthrough lithium-glass batteries mean electric cars can now recharge in minutes, not hours—rolling out on new models this summer.</p>
-          <a href="#">Read More</a>
-        </div>
-        <div class="blog-card">
-          <h3>👓 Apple Vision Pro 2 Review: AR For Everyday</h3>
-          <div class="meta">May 19, 2025 &middot; By Kgololosego Moleba</div>
-          <p>The second generation of Apple’s AR headset impresses with lighter weight, sharper displays, and a growing ecosystem of useful apps.</p>
-          <a href="#">Read More</a>
-        </div>
-        <div class="blog-card">
-          <h3>🎮 PlayStation 6 Announced with Cloud-Only Game Mode</h3>
-          <div class="meta">May 18, 2025 &middot; By Rina Patel</div>
-          <p>Sony unveils the PlayStation 6, featuring advanced cloud gaming and a new controller with haptic feedback for emotions.</p>
-          <a href="#">Read More</a>
-        </div>
-        <div class="blog-card">
-          <h3>🌱 Urban Farms: IoT-Powered Skyscraper Greens</h3>
-          <div class="meta">May 17, 2025 &middot; By Alex Rivera</div>
-          <p>IoT-controlled urban farms in skyscrapers are producing fresh food with 80% less water, changing city diets from New York to Tokyo.</p>
-          <a href="#">Read More</a>
-        </div>
+      </div>
+      <div class="blog-info">
+        <h4>Can I contribute my own article?</h4>
+        <p>
+          Absolutely! TechTical welcomes pitches and guest submissions from diverse writers, professionals, and enthusiasts. Visit our <a style="color:var(--accent)" href="contact.html">Contact</a> page to share your story, review, or analysis idea.
+        </p>
+        <h4>How do we select topics?</h4>
+        <p>
+          We monitor global news, research, and community tips daily. Our editorial team prioritizes clarity, impact, and relevance—always aiming for actionable insight, not hype.
+        </p>
+        <h4>What’s coming next?</h4>
+        <ul>
+          <li>Exclusive interviews with tech founders and thought leaders</li>
+          <li>Deep dives into emerging AI, privacy, and sustainability trends</li>
+          <li>Weekly roundups and live event coverage</li>
+        </ul>
       </div>
     </section>
   </main>
   <footer>
     <div>
-      <span>&copy; 2025 TechieTrends. All rights reserved.</span>
+      <span>&copy; 2025 TechTical. All rights reserved.</span>
       <span class="footer-icons">
-        <span title="Twitter" aria-label="Twitter">🐦</span>
-        <span title="Facebook" aria-label="Facebook">📘</span>
-        <span title="GitHub" aria-label="GitHub">💻</span>
+        <a href="#" title="Twitter" aria-label="Twitter"><svg width="24" height="24" fill="none" stroke="currentColor"><path d="M22 5.8c-.8.3-1.5.5-2.3.6a3.9 3.9 0 0 0 1.7-2.1c-.7.5-1.6.8-2.5 1a3.8 3.8 0 0 0-6.6 3.5c-3.2-.1-6-1.7-7.9-4.1-.4.7-.6 1.6-.3 2.4a3.8 3.8 0 0 0 1.7 1.6c-.6 0-1.2-.2-1.7-.5a3.8 3.8 0 0 0 3 3.7c-.4.1-.8.2-1.2.2-.2 0-.4 0-.6-.1a3.8 3.8 0 0 0 3.6 2.7A7.7 7.7 0 0 1 2 19.5c-.2 0-.5 0-.7-.1a11 11 0 0 0 6 1.8c7.2 0 11.2-6 11.2-11.2l-.01-.5A7.7 7.7 0 0 0 24 4.6a7.8 7.8 0 0 1-2.2.6z"/></svg></a>
+        <a href="#" title="Facebook" aria-label="Facebook"><svg width="24" height="24" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3v7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-7h2.3a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1H16V7a2 2 0 0 1 2-2h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-2z"/></svg></a>
+        <a href="#" title="GitHub" aria-label="GitHub"><svg width="24" height="24" fill="none" stroke="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5V19c-2.8.6-3.4-1.3-3.4-1.3-.4-1-1.1-1.3-1.1-1.3-.9-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.3 1.1 2.9.8.1-.7.3-1.1.5-1.3-2.2-.3-4.5-1.2-4.5-5.2 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 .9a10.2 10.2 0 0 1 2.7-.4c.9 0 1.8.1 2.7.4 2.1-1.2 3-.9 3-.9.6 1.6.2 2.8.1 3.1.7.8 1.1 1.7 1.1 2.9 0 4.1-2.3 4.9-4.6 5.2.3.2.6.8.6 1.7v2.6c0 .3.2.7.7.6A10.5 10.5 0 0 0 22 12.3C22 6.6 17.5 2 12 2z"/></svg></a>
       </span>
     </div>
     <div>

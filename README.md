@@ -1,10 +1,10 @@
-# TechieTrends
+# TechTical
 
 **Author:** Kgololosego Moleba
 
 ---
 
-**TechieTrends** is your modern, interactive source for the freshest technology news, breakthroughs, and digital culture.  
+**TechTical** is your modern, interactive source for the freshest technology news, breakthroughs, and digital culture.  
 Built as a showcase of advanced web development skills, this site features a dark, vibrant UI, live news, and a focus on clarity and usability.
 
 ---
@@ -58,24 +58,10 @@ Built as a showcase of advanced web development skills, this site features a dar
 
 ---
 
-## 💻 How to Run Locally
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/plp-webtechnologies/feb-2025-final-project-and-deployment-kgolomoleba.git
-    ```
-2. Navigate to the project folder:
-    ```bash
-    cd feb-2025-final-project-and-deployment-kgolomoleba
-    ```
-3. Open `index.html` in your browser.
-
----
-
 ## 🖼️ Screenshots
 
-![Homepage Preview](./images/screenshot1.png)
-![Articles Preview](./images/screenshot2.png)
+![Homepage Preview](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
+![Articles Preview](https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80)
 
 ---
 
@@ -89,12 +75,4 @@ Contact us on the [Contact](contact.html) page or submit a pull request!
 ## 📢 Live Website
 
 Visit the latest version here:  
-[TechieTrends - Live Site](https://plp-webtechnologies.github.io/feb-2025-final-project-and-deployment-kgolomoleba/)
-
----
-
-## 📄 License
-
-MIT License
-
----
+<!-- Add your GitHub Pages or hosting link here -->
